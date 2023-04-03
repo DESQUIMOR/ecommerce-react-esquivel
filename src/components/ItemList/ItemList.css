@@ -1,0 +1,14 @@
+.Items-List {
+    margin: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+.Items-List div{
+    height: 500px;
+    width: auto;
+}
+div Link{
+    list-style: none;
+    text-decoration: none;
+}

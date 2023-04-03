@@ -1,16 +1,25 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 
+import Home from './pages/Home/Home.jsx';
+import ItemDetailContainer from './components/ItemDetaiñlContainer/ItemDetailContainer';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 function App() {
   return (
-    <div className="App">
-      <NavBar/>
-      <header className="App-header">
-        <ItemListContainer greeting={"Hola! Bienvenidos a mi primera e-commerce con React"}/>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <NavBar/>
+        <header className="App-header">
+          <Routes>
+            <Route path="/" element ={<Home/>}/>
+            <Route path="/item/:id" element ={<ItemDetailContainer/>}/>
+            <Route path="/category/:id" element ={<ItemListContainer/>}/>
+          </Routes>
+        </header>
+      </div>
+    </Router>
   );
 }
 
